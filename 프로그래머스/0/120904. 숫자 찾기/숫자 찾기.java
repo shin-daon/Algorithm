@@ -1,17 +1,15 @@
 class Solution {
     public int solution(int num, int k) {
-        int answer = -1;
-        String str = String.valueOf(num);
-        String[] arr = str.split("");
-        String key = String.valueOf(k);
+        String numStr = String.valueOf(num);
+        String kStr = String.valueOf(k);
+        int answer = (int)numStr.indexOf(kStr);
         
-        for(int i=0; i<arr.length; i++){
-            if(arr[i].equals(key)){
-                answer = i+1;
-                break;
-            }
+        if(answer >= 0){
+            answer += 1;
+        }else{
+            answer = -1;
         }
-        
+
         return answer;
     }
 }
